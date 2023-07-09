@@ -22,7 +22,7 @@ EaseMySearch is a powerful and user-friendly tool designed to enhance file searc
 ~~2. Open the EaseMySearch.html file in your web browser.~~
 
 The code is hosted now and can be accessed globally, [EaseMySearch](https://raazankeet.github.io/EaseMySearch)
-<a href="https://raazankeet.github.io/EaseMySearch" target="_blank" rel="noopener noreferrer">EaseMySearch</a>
+
 
 
 ## Usage
