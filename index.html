@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/raazankeet/EaseMySearch/css/style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   
+  
 </head>
 <body>
   <div class="container">
@@ -25,14 +26,19 @@
         <input type="text" id="globalSearchInput" class="form-control rounded-corner" oninput="searchTable()" placeholder="Search Global">
         <label class="separator-label"> </label>
         <input type="file" id="fileInput" accept=".csv" class="form-control-file" onchange="handleFileSelect(event)" style="display: none;">
-        <label for="fileInput" class="btn btn-primary rounded-corner">
+        <label for="fileInput" class="btn btn-primary btn-sm rounded-corner">
           <span id="fileInputLabel">Choose File</span>
         </label>
         <label class="toggle-btn" id="_1st-toggle-btn" onclick="toggleBackground()">
           <input type="checkbox">
           <span></span>
         </label>
-        <a href="data:text/csv;charset=utf-8,%EF%BB%BFcommon%20name,folder,file%20name,tags" download="EaseMySearch.csv" class="btn btn-primary btn-success rounded-corner ml-auto">
+		
+		  <button type="button" class="btn btn-primary btn-sm rounded-corner" data-toggle="modal" data-target="#feedbackModal">
+    Feedback
+  </button>
+		
+        <a href="data:text/csv;charset=utf-8,%EF%BB%BFcommon%20name,folder,file%20name,tags" download="EaseMySearch.csv" class="btn btn-sm btn-primary btn-success rounded-corner ml-auto">
           <span class="material-icons icon-download">cloud_download</span> Sample
         </a>
       </div>
@@ -51,12 +57,82 @@
       </table>
     </div>
   </div>
+  
+  <div class="modal fade" id="feedbackModal" tabindex="-1" role="dialog" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="feedbackModalLabel">Feedback</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="https://formspree.io/f/mwkdkbgw" method="POST">
+            <div class="form-group">
+              <label for="feedback">Your Feedback:</label>
+              <textarea id="feedback" name="body" class="form-control" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="_replyto" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="rating">Rating:</label>
+              <div class="rating-container">
+                <span class="rating-star" onclick="setRating(1)">
+                  <i class="fas fa-star"></i>
+                </span>
+                <span class="rating-star" onclick="setRating(2)">
+                  <i class="fas fa-star"></i>
+                </span>
+                <span class="rating-star" onclick="setRating(3)">
+                  <i class="fas fa-star"></i>
+                </span>
+                <span class="rating-star" onclick="setRating(4)">
+                  <i class="fas fa-star"></i>
+                </span>
+                <span class="rating-star" onclick="setRating(5)">
+                  <i class="fas fa-star"></i>
+                </span>
+              </div>
+              <input type="hidden" id="rating" name="rating" value="">
+            </div>
+            <button type="submit" class="btn btn-primary">Send</button>
+            <input type="hidden" name="title" value="User Feedback">
+            <input type="hidden" name="labels" value="feedback">
+            
+            <input type="hidden" name="user_agent" value="" id="user_agent">
+            <input type="hidden" name="browser" value="" id="browser">
+            <input type="hidden" name="os" value="" id="os">
+            <input type="hidden" name="screen_resolution" value="" id="screen_resolution">
+            <input type="hidden" name="referring_url" value="" id="referring_url">
+            <input type="hidden" name="language" value="" id="language">
+            <input type="hidden" name="timezone" value="" id="timezone">
+            <input type="hidden" name="platform" value="" id="platform">
+            
+  
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <script src="https://cdn.jsdelivr.net/gh/raazankeet/EaseMySearch/js/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/raazankeet/EaseMySearch/js/4.5.2-bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/raazankeet/EaseMySearch/js/1.18.3-bootstrap-table.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/raazankeet/EaseMySearch/js/1.4.0-iziToast.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/raazankeet/EaseMySearch/js/main.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  
+  
+  
 </body>
 </html>
