@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>EaseMySearch</title>
+  <link rel="icon" href="data:image/png;base64,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" type="image/png">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+	  
+  <style>
+  
+  
+  
+    body {
+      background-color: #f7f7f7;
+      font-family: Arial, sans-serif;
+    }
+    
+    .container {
+      margin-top: 30px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      max-width: 1300px;
+    }
+    
+    .file-input {
+      margin-bottom: 20px;
+    }
+    
+    .search-input {
+      margin-bottom: 10px;
+    }
+    
+    .separator-label {
+      margin-left: 8px;
+      margin-right: 8px;
+    }
+    
+    /* Decrease the width of the search box */
+    .search-input input {
+      width: 250px;
+    }
+    
+    .table-container {
+      margin-bottom: 10px;
+    }
+    
+    .pagination-container {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .pagination-container .pagination {
+      margin-bottom: 0;
+      display: flex;
+      gap: 5px;
+    }
+    
+    .pagination-container .pagination .page-link {
+      padding: 5px 10px;
+    }
+    
+    .pagination-container .pagination .page-item:first-child .page-link,
+    .pagination-container .pagination .page-item:last-child .page-link {
+      border-radius: 20px;
+    }
+    
+    .table-striped tbody tr:nth-of-type(odd) {
+      background-color: #f7f7f7;
+    }
+    
+    .table-striped tbody tr:nth-of-type(even) {
+      background-color: #fff;
+    }
+    
+    /* Center align the table header */
+    .table th {
+      text-align: center;
+      padding: 5px 2px;
+      width: 120px; /* Set the desired width for the table header */
+      min-width: 12px; /* Set the minimum width to prevent narrowing */
+    }
+    
+    .table td {
+      padding: 2px;
+      font-size: 20px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    
+    .align-right {
+      display: flex;
+      justify-content: flex-end;
+    }
+    
+    table.table-fit {
+      width: auto;
+    }
+    
+    table.table-fit thead th,
+    table.table-fit tfoot th {
+      width: auto;
+    }
+    
+    table.table-fit tbody td,
+    table.table-fit tfoot td {
+      width: auto !important;
+    }
+    
+.toast-container {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      padding: 10px;
+      z-index: 1000;
+	  
+    }
+    
+    .toast-success {
+      background-color: #c3e6cb;
+      color: #155724;
+    }
+    
+    .toast-body {
+      
+	  height: 20px;
+    }
+	
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="search-input">
+      <div class="form-inline">
+        <label for="searchInput">Common Name:</label>
+        <input type="text" id="searchInput" class="form-control" oninput="searchTable()" placeholder="Search Common Name">
+        <label class="separator-label"> </label>
+        <label for="searchTagsInput">Tags:</label>
+        <input type="text" id="searchTagsInput" class="form-control" oninput="searchTable()" placeholder="Search Tags">
+        <label class="separator-label"> </label>
+        <label for="globalSearchInput">Global:</label>
+        <input type="text" id="globalSearchInput" class="form-control" oninput="searchTable()" placeholder="Search Global">
+        <label class="separator-label"> </label>
+        <input type="file" id="fileInput" accept=".csv" class="form-control-file" onchange="handleFileSelect(event)" style="display: none;">
+        <label for="fileInput" class="btn btn-primary">
+          <span id="fileInputLabel">Choose File</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="table-container">
+      <table id="dataTable" class="table table-fit table-hover table-striped table-bordered table-sm" data-toggle="table" data-pagination="true" data-page-list="[5, 10, 20, 50, 100]" data-page-size="15" data-sortable="true">
+        <thead class="thead-dark">
+          <tr>
+            <th data-field="common_name" data-sortable="true">Common Name</th>
+            <th data-field="folder" data-sortable="true">Folder</th>
+            <th data-field="file_name" data-sortable="true">File Name</th>
+            <th data-field="tags" data-sortable="true">Tags</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="toast-container position-fixed top-0 end-0 p-3"></div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.18.3/dist/bootstrap-table.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js"></script>
+  
+  <script>
+    var data = []; // Variable to hold the parsed CSV data
+    var currentData = []; // Variable to hold the currently displayed data
+
+    // Handle file selection
+function handleFileSelect(event) {
+  var file = event.target.files[0];
+  var reader = new FileReader();
+
+  reader.onload = function(e) {
+    var contents = e.target.result;
+    var rows = contents.split('\n');
+    var header = rows[0].split(',').map(item => item.trim());
+
+    data = [];
+    for (var i = 1; i < rows.length; i++) {
+      var row = parseCSVRow(rows[i], header.length);
+      if (row.length === header.length && row.some(item => item !== '')) {
+        var item = {};
+        for (var j = 0; j < header.length; j++) {
+          item[header[j].replace(/ /g, '_').toLowerCase()] = row[j];
+        }
+        data.push(item);
+      }
+    }
+
+    renderTable(data);
+    document.getElementById('fileInputLabel').textContent = file.name; // Set the file name as label text
+  };
+
+  reader.readAsText(file);
+}
+
+// Parse a CSV row, handling quoted values with commas
+function parseCSVRow(row, expectedLength) {
+  var result = [];
+  var startIndex = 0;
+  var inQuote = false;
+
+  for (var i = 0; i < row.length; i++) {
+    var char = row[i];
+
+    if (char === '"') {
+      inQuote = !inQuote;
+    } else if (char === ',' && !inQuote) {
+      var value = row.slice(startIndex, i).trim();
+      result.push(value);
+      startIndex = i + 1;
+    }
+  }
+
+  // Add the last value after the last comma
+  var lastValue = row.slice(startIndex).trim();
+  result.push(lastValue);
+
+  // If the row has fewer values than expected, pad with empty strings
+  while (result.length < expectedLength) {
+    result.push('');
+  }
+
+  return result;
+}
+
+
+    // Render the table
+function renderTable(data) {
+  var formattedData = data.map((item, index) => {
+    var folderPath = item.folder || '';
+    var tags = item.tags || '';
+
+    // Handle commas within the tags field by enclosing it in quotes
+    if (tags.includes(',')) {
+      tags = tags.replace(/^"(.+(?="$))"$/, '$1');
+    }
+
+    return {
+      ...item,
+      folder: folderPath,
+      tags: tags
+    };
+  });
+
+  $('#dataTable').bootstrapTable('destroy').bootstrapTable({
+    data: formattedData,
+    onPostBody: addFolderClickListeners
+  });
+}
+
+
+
+
+    // Add click listeners to folder names for copying the path
+    function addFolderClickListeners() {
+      var table = $('#dataTable');
+      var rows = table.find('tbody tr');
+
+      rows.each(function(index) {
+        var folderCell = $(this).find('td:nth-child(2)');
+        var folderPath = folderCell.text();
+
+        folderCell.empty().append(createFolderLink(folderPath));
+      });
+    }
+
+    // Create folder link with click event to copy the path
+    function createFolderLink(folderPath) {
+      var link = $('<a href="#" class="folder-link"></a>');
+      link.text(folderPath);
+      link.on('click', function() {
+        copyToClipboard(folderPath);
+        showNotification('Folder path copied to clipboard!', 'success');
+      });
+
+      return link;
+    }
+
+    // Copy folder path to clipboard
+    function copyToClipboard(text) {
+      var textarea = document.createElement('textarea');
+      textarea.value = text;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+    }
+
+    // Show toast notification
+function showNotification(message, type) {
+      var iconClass = type === 'success' ? 'toast-success' : '';
+
+      iziToast.show({
+        message: '<span class="material-icons md-24">thumb_up</span> ' + message,
+        position: 'topRight',
+        timeout: 3000,
+        progressBarColor: type === 'success' ? '#F74A1F' : '',
+        backgroundColor: type === 'success' ? '#83DF05' : '',
+        icon: 'none',
+		
+		displayMode:2,
+		transitionIn:'bounceInDown',
+		animateInside:true,
+      });
+    }
+
+    // Perform search on table
+    function searchTable() {
+      var searchCommonName = document.getElementById('searchInput').value.toLowerCase();
+      var searchTags = document.getElementById('searchTagsInput').value.toLowerCase();
+      var searchGlobal = document.getElementById('globalSearchInput').value.toLowerCase();
+
+      var filteredData = data.filter(item => {
+        var commonName = item['common_name'] || '';
+        var folder = item['folder'] || '';
+        var fileName = item['file_name'] || '';
+        var tags = item['tags'] || '';
+
+        return (
+          commonName.toLowerCase().includes(searchCommonName) &&
+          tags.toLowerCase().includes(searchTags) &&
+          (
+            commonName.toLowerCase().includes(searchGlobal) ||
+            folder.toLowerCase().includes(searchGlobal) ||
+            fileName.toLowerCase().includes(searchGlobal) ||
+            tags.toLowerCase().includes(searchGlobal)
+          )
+        );
+      });
+
+      currentData = filteredData.map((item, index) => ({ ...item }));
+      renderTable(currentData);
+    }
+	
+  </script>
+</body>
+</html>
