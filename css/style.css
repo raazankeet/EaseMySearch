@@ -1,0 +1,282 @@
+/* Styling for the toggle button */
+.toggle-button {
+  position: relative;
+  right: -3rem;
+  width: 40px;
+  height: 24px;
+}
+
+.toggle-button input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: green;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #black;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #black;
+}
+
+input:checked + .slider:before {
+  transform: translateX(16px);
+}
+
+/* Styling for the dark mode */
+.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Styling for the main container */
+.container {
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 1300px;
+}
+
+/* Styling for the file input */
+.file-input {
+  margin-bottom: 20px;
+}
+
+/* Styling for the search input */
+.search-input {
+  margin-bottom: 10px;
+}
+
+.separator-label {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.search-input input {
+  width: 250px;
+}
+
+/* Styling for the table container */
+.table-container {
+  margin-bottom: 10px;
+}
+
+/* Styling for the pagination container */
+.pagination-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagination-container .pagination {
+  margin-bottom: 0;
+  display: flex;
+  gap: 5px;
+}
+
+.pagination-container .pagination .page-link {
+  padding: 5px 10px;
+}
+
+.pagination-container .pagination .page-item:first-child .page-link,
+.pagination-container .pagination .page-item:last-child .page-link {
+  border-radius: 20px;
+}
+
+/* Styling for striped table rows */
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f7f7f7;
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+  background-color: #fff;
+}
+
+/* Styling for table header cells */
+.table th {
+  text-align: center;
+  padding: 5px 2px;
+  width: 120px;
+  min-width: 12px;
+}
+
+/* Styling for table data cells */
+.table td {
+  padding: 2px;
+  font-size: 20px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* Aligning content to the right */
+.align-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Adjusting table width */
+table.table-fit {
+  width: auto;
+}
+
+table.table-fit thead th,
+table.table-fit tfoot th {
+  width: auto;
+}
+
+table.table-fit tbody td,
+table.table-fit tfoot td {
+  width: auto !important;
+}
+
+/* Styling for toast notifications */
+.toast-container {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.toast-success {
+  background-color: #c3e6cb;
+  color: #155724;
+}
+
+.toast-body {
+  height: 20px;
+}
+
+/* Styling for download button */
+.download-button {}
+
+.download-button .btn {
+  margin-left: 10px;
+}
+
+.icon-download {
+  vertical-align: middle;
+  margin-right: 1px;
+}
+
+/* Styling for Material Icons */
+.material-icons.md-18 {
+  font-size: 18px;
+}
+
+.material-icons.md-24 {
+  font-size: 24px;
+}
+
+.material-icons.md-36 {
+  font-size: 36px;
+}
+
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+/* Styling for the toggle button */
+.toggle-btn {
+  position: relative;
+  width: 50px;
+  height: 25px;
+  margin: 0 auto;
+  border-radius: 40px;
+  right: -4.5rem;
+}
+
+input[type="checkbox"] {
+  width: 90%;
+  height: 90%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  margin: 0px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}
+
+#_1st-toggle-btn span {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  overflow: hidden;
+  opacity: 10;
+  background-color: #0D6EFD;
+  box-shadow: 0px 2px 25px #d9d9d9;
+  border-radius: 40px;
+  transition: 0.2s ease background-color, 0.2s ease opacity;
+}
+
+#_1st-toggle-btn span:before,
+#_1st-toggle-btn span:after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  width: 16px;
+  height: 18px;
+  border-radius: 50%;
+  transition: 0.5s ease transform, 0.2s ease background-color;
+}
+
+#_1st-toggle-btn span:before {
+  background-color: #fff;
+  transform: translate(-38px, 1px);
+  z-index: 1;
+}
+
+#_1st-toggle-btn span:after {
+  background-color: #FED33C;
+  transform: translate(5px, 0px);
+  z-index: 0;
+}
+
+#_1st-toggle-btn input[type="checkbox"]:checked + span {
+  background-color: #000;
+}
+
+#_1st-toggle-btn input[type="checkbox"]:active + span {
+  opacity: 0.5;
+}
+
+#_1st-toggle-btn input[type="checkbox"]:checked + span:before {
+  background-color: #000;
+  transform: translate(38px, -2px);
+}
+
+#_1st-toggle-btn input[type="checkbox"]:checked + span:after {
+  background-color: #fff;
+  transform: translate(32px, 0px);
+}
