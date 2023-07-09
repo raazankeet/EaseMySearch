@@ -143,6 +143,11 @@
       margin-left: 10px;
     }
 	
+	.icon-download {
+  vertical-align: middle;
+  margin-right: 1px;
+}
+
 	
 .material-icons.md-18 { font-size: 18px; }
 .material-icons.md-24 { font-size: 24px; }
@@ -170,7 +175,10 @@
           <span id="fileInputLabel">Choose File</span>
         </label>
 		
-			<a href="data:text/csv;charset=utf-8,%EF%BB%BFcommon%20name,folder,file%20name,tags" download="EaseMySearch.csv" class="btn btn-primary ml-auto">Sample</a>		
+		<a href="data:text/csv;charset=utf-8,%EF%BB%BFcommon%20name,folder,file%20name,tags" download="EaseMySearch.csv" class="btn btn-primary btn-success ml-auto">
+  <span class="material-icons icon-download">cloud_download</span> Sample
+</a>
+
       </div>
 	  
     </div>
@@ -330,14 +338,14 @@ function showNotification(message, type) {
 
       iziToast.show({
         message: '<span class="material-icons md-24">thumb_up</span> ' + message,
-        position: 'topRight',
+        position: 'bottomRight',
         timeout: 3000,
         progressBarColor: type === 'success' ? '#F74A1F' : '',
         backgroundColor: type === 'success' ? '#83DF05' : '',
         icon: 'none',
 		
 		displayMode:2,
-		transitionIn:'bounceInDown',
+		transitionIn:'bounceInLeft',
 		animateInside:true,
       });
     }
