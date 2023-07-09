@@ -133,6 +133,17 @@
 	  height: 20px;
     }
 	
+.download-button {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 10px;
+    }
+    
+    .download-button .btn {
+      margin-left: 10px;
+    }
+	
+	
 .material-icons.md-18 { font-size: 18px; }
 .material-icons.md-24 { font-size: 24px; }
 .material-icons.md-36 { font-size: 36px; }
@@ -158,8 +169,12 @@
         <label for="fileInput" class="btn btn-primary">
           <span id="fileInputLabel">Choose File</span>
         </label>
+		
+			<a href="data:text/csv;charset=utf-8,%EF%BB%BFcommon%20name,folder,file%20name,tags" download="EaseMySearch.csv" class="btn btn-primary ml-auto">Sample</a>		
       </div>
+	  
     </div>
+	
 
     <div class="table-container">
       <table id="dataTable" class="table table-fit table-hover table-striped table-bordered table-sm" data-toggle="table" data-pagination="true" data-page-list="[5, 10, 20, 50, 100]" data-page-size="15" data-sortable="true">
@@ -355,6 +370,16 @@ function showNotification(message, type) {
       renderTable(currentData);
     }
 	
+	function createSampleCSV() {
+      var csvContent = "data:text/csv;charset=utf-8,%EF%BB%BF";
+      csvContent += encodeURIComponent("common name,folder,file name,tags") + "\n";
+      
+      var encodedURI = encodeURI(csvContent);
+      var link = document.createElement("a");
+      link.setAttribute("href", encodedURI);
+      link.setAttribute("download", "EaseMySearch.csv");
+      link.click();
+    }
   </script>
 </body>
 </html>
