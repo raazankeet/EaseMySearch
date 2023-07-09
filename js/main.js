@@ -168,3 +168,35 @@ function toggleBackground() {
   var body = document.querySelector('body');
   body.classList.toggle('dark-mode');
 }
+
+document.getElementById('user_agent').value = navigator.userAgent;
+        document.getElementById('browser').value = window.navigator.userAgent;
+        document.getElementById('os').value = window.navigator.platform;
+
+        // Set Screen Resolution value
+        document.getElementById('screen_resolution').value = window.screen.width + 'x' + window.screen.height;
+
+        // Set Referring URL value
+        document.getElementById('referring_url').value = document.referrer;
+
+        // Set Language value
+        document.getElementById('language').value = navigator.language;
+
+        // Set Timezone value
+        document.getElementById('timezone').value = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+        // Set Platform value
+        document.getElementById('platform').value = navigator.platform;
+
+        // Rating star selection
+        function setRating(rating) {
+          document.getElementById('rating').value = rating;
+          const ratingStars = document.querySelectorAll('.rating-star');
+          ratingStars.forEach((star, index) => {
+            if (index < rating) {
+              star.classList.add('checked');
+            } else {
+              star.classList.remove('checked');
+            }
+          });
+        }
