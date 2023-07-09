@@ -4,52 +4,39 @@
   <meta charset="UTF-8">
   <title>EaseMySearch</title>
   <link rel="icon" href="https://raw.githubusercontent.com/raazankeet/Images/main/EaseMySearchLogo.png" type="image/png">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-	  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/raazankeet/EaseMySearch/css/4.5.2-bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/raazankeet/EaseMySearch/css/1.18.3-bootstrap-table.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/raazankeet/EaseMySearch/css/1.4.0-iziToast.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/raazankeet/EaseMySearch/css/style.css">
-
-
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  
 </head>
 <body>
   <div class="container">
     <div class="search-input">
       <div class="form-inline">
         <label for="searchInput">Common Name:</label>
-        <input type="text" id="searchInput" class="form-control" oninput="searchTable()" placeholder="Search Common Name">
+        <input type="text" id="searchInput" class="form-control rounded-corner" oninput="searchTable()" placeholder="Search Common Name">
         <label class="separator-label"> </label>
-        <label for="searchTagsInput">Tags:</label>
-        <input type="text" id="searchTagsInput" class="form-control" oninput="searchTable()" placeholder="Search Tags">
+        <label for="searchTagsInput">Tags: </label>
+        <input type="text" id="searchTagsInput" class="form-control rounded-corner" oninput="searchTable()" placeholder="Search Tags">
         <label class="separator-label"> </label>
         <label for="globalSearchInput">Global:</label>
-        <input type="text" id="globalSearchInput" class="form-control" oninput="searchTable()" placeholder="Search Global">
+        <input type="text" id="globalSearchInput" class="form-control rounded-corner" oninput="searchTable()" placeholder="Search Global">
         <label class="separator-label"> </label>
         <input type="file" id="fileInput" accept=".csv" class="form-control-file" onchange="handleFileSelect(event)" style="display: none;">
-        <label for="fileInput" class="btn btn-primary">
+        <label for="fileInput" class="btn btn-primary rounded-corner">
           <span id="fileInputLabel">Choose File</span>
         </label>
-		
-
-	
-    
-	 <label class="toggle-btn" id="_1st-toggle-btn" onclick="toggleBackground()">
-      <input type="checkbox">
-      <span></span>
-    </label>
-		
-		<a href="data:text/csv;charset=utf-8,%EF%BB%BFcommon%20name,folder,file%20name,tags" download="EaseMySearch.csv" class="btn btn-primary btn-success ml-auto">
-  <span class="material-icons icon-download">cloud_download</span> Sample
-</a>
-
+        <label class="toggle-btn" id="_1st-toggle-btn" onclick="toggleBackground()">
+          <input type="checkbox">
+          <span></span>
+        </label>
+        <a href="data:text/csv;charset=utf-8,%EF%BB%BFcommon%20name,folder,file%20name,tags" download="EaseMySearch.csv" class="btn btn-primary btn-success rounded-corner ml-auto">
+          <span class="material-icons icon-download">cloud_download</span> Sample
+        </a>
       </div>
-	  
     </div>
-	
-	
-
     <div class="table-container">
       <table id="dataTable" class="table table-fit table-hover table-striped table-bordered table-sm" data-toggle="table" data-pagination="true" data-page-list="[5, 10, 20, 50, 100]" data-page-size="15" data-sortable="true">
         <thead class="thead-dark">
@@ -65,200 +52,11 @@
     </div>
   </div>
 
-  <div class="toast-container position-fixed top-0 end-0 p-3"></div>
+  <script src="https://cdn.jsdelivr.net/gh/raazankeet/EaseMySearch/js/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/raazankeet/EaseMySearch/js/4.5.2-bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/raazankeet/EaseMySearch/js/1.18.3-bootstrap-table.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/raazankeet/EaseMySearch/js/1.4.0-iziToast.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/raazankeet/EaseMySearch/js/main.js"></script>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.18.3/dist/bootstrap-table.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js"></script>
-  
-  <script>
-    var data = []; // Variable to hold the parsed CSV data
-    var currentData = []; // Variable to hold the currently displayed data
-
-    // Handle file selection
-function handleFileSelect(event) {
-  var file = event.target.files[0];
-  var reader = new FileReader();
-
-  reader.onload = function(e) {
-    var contents = e.target.result;
-    var rows = contents.split('\n');
-    var header = rows[0].split(',').map(item => item.trim());
-
-    data = [];
-    for (var i = 1; i < rows.length; i++) {
-      var row = parseCSVRow(rows[i], header.length);
-      if (row.length === header.length && row.some(item => item !== '')) {
-        var item = {};
-        for (var j = 0; j < header.length; j++) {
-          item[header[j].replace(/ /g, '_').toLowerCase()] = row[j];
-        }
-        data.push(item);
-      }
-    }
-
-    renderTable(data);
-    document.getElementById('fileInputLabel').textContent = file.name; // Set the file name as label text
-  };
-
-  reader.readAsText(file);
-}
-
-// Parse a CSV row, handling quoted values with commas
-function parseCSVRow(row, expectedLength) {
-  var result = [];
-  var startIndex = 0;
-  var inQuote = false;
-
-  for (var i = 0; i < row.length; i++) {
-    var char = row[i];
-
-    if (char === '"') {
-      inQuote = !inQuote;
-    } else if (char === ',' && !inQuote) {
-      var value = row.slice(startIndex, i).trim();
-      result.push(value);
-      startIndex = i + 1;
-    }
-  }
-
-  // Add the last value after the last comma
-  var lastValue = row.slice(startIndex).trim();
-  result.push(lastValue);
-
-  // If the row has fewer values than expected, pad with empty strings
-  while (result.length < expectedLength) {
-    result.push('');
-  }
-
-  return result;
-}
-
-
-    // Render the table
-function renderTable(data) {
-  var formattedData = data.map((item, index) => {
-    var folderPath = item.folder || '';
-    var tags = item.tags || '';
-
-    // Handle commas within the tags field by enclosing it in quotes
-    if (tags.includes(',')) {
-      tags = tags.replace(/^"(.+(?="$))"$/, '$1');
-    }
-
-    return {
-      ...item,
-      folder: folderPath,
-      tags: tags
-    };
-  });
-
-  $('#dataTable').bootstrapTable('destroy').bootstrapTable({
-    data: formattedData,
-    onPostBody: addFolderClickListeners
-  });
-}
-
-
-
-
-    // Add click listeners to folder names for copying the path
-    function addFolderClickListeners() {
-      var table = $('#dataTable');
-      var rows = table.find('tbody tr');
-
-      rows.each(function(index) {
-        var folderCell = $(this).find('td:nth-child(2)');
-        var folderPath = folderCell.text();
-
-        folderCell.empty().append(createFolderLink(folderPath));
-      });
-    }
-
-    // Create folder link with click event to copy the path
-    function createFolderLink(folderPath) {
-      var link = $('<a href="#" class="folder-link"></a>');
-      link.text(folderPath);
-      link.on('click', function() {
-        copyToClipboard(folderPath);
-        showNotification('Folder path copied to clipboard!', 'success');
-      });
-
-      return link;
-    }
-
-    // Copy folder path to clipboard
-    function copyToClipboard(text) {
-      var textarea = document.createElement('textarea');
-      textarea.value = text;
-      document.body.appendChild(textarea);
-      textarea.select();
-      document.execCommand('copy');
-      document.body.removeChild(textarea);
-    }
-
-    // Show toast notification
-function showNotification(message, type) {
-      var iconClass = type === 'success' ? 'toast-success' : '';
-
-      iziToast.show({
-        message: '<span class="material-icons md-24">thumb_up</span> ' + message,
-        position: 'bottomRight',
-        timeout: 3000,
-        progressBarColor: type === 'success' ? '#F74A1F' : '',
-        backgroundColor: type === 'success' ? '#83DF05' : '',
-        icon: 'none',
-		
-		displayMode:2,
-		transitionIn:'bounceInLeft',
-		animateInside:true,
-      });
-    }
-
-    // Perform search on table
-    function searchTable() {
-      var searchCommonName = document.getElementById('searchInput').value.toLowerCase();
-      var searchTags = document.getElementById('searchTagsInput').value.toLowerCase();
-      var searchGlobal = document.getElementById('globalSearchInput').value.toLowerCase();
-
-      var filteredData = data.filter(item => {
-        var commonName = item['common_name'] || '';
-        var folder = item['folder'] || '';
-        var fileName = item['file_name'] || '';
-        var tags = item['tags'] || '';
-
-        return (
-          commonName.toLowerCase().includes(searchCommonName) &&
-          tags.toLowerCase().includes(searchTags) &&
-          (
-            commonName.toLowerCase().includes(searchGlobal) ||
-            folder.toLowerCase().includes(searchGlobal) ||
-            fileName.toLowerCase().includes(searchGlobal) ||
-            tags.toLowerCase().includes(searchGlobal)
-          )
-        );
-      });
-
-      currentData = filteredData.map((item, index) => ({ ...item }));
-      renderTable(currentData);
-    }
-	
-	function createSampleCSV() {
-      var csvContent = "data:text/csv;charset=utf-8,%EF%BB%BF";
-      csvContent += encodeURIComponent("common name,folder,file name,tags") + "\n";
-      
-      var encodedURI = encodeURI(csvContent);
-      var link = document.createElement("a");
-      link.setAttribute("href", encodedURI);
-      link.setAttribute("download", "EaseMySearch.csv");
-      link.click();
-    }
-	
-	 function toggleBackground() {
-      var body = document.querySelector('body');
-      body.classList.toggle('dark-mode');
-    }
-  </script>
 </body>
 </html>
