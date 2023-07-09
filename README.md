@@ -9,17 +9,19 @@ EaseMySearch is a powerful and user-friendly tool designed to enhance file searc
 
 ## Features
 
-- Fast and efficient search functionality based on common names and tags.
-- Interactive table interface for seamless file browsing and exploration.
-- Double-click on folder names to copy associated tags to the clipboard for easy folder opening.
+- Fast and efficient search functionality based on common names and tags or everything.
+- Interactive table interface for seamless exploration.
+- Double-click on folder names to copy to the clipboard for easy folder opening.
 - Responsive design for optimal usability across devices.
 - Customize and manage tags for enhanced organization and search capabilities.
 
 ## Installation
 
-1. Clone the repository: git clone https://github.com/raazankeet/EaseMySearch.git
+~~1. Clone the repository: git clone https://github.com/raazankeet/EaseMySearch.git~~
 
-2. Open the EaseMySearch.html file in your web browser.
+~~2. Open the EaseMySearch.html file in your web browser.~~
+
+The code is hosted now and can be accessed globally, [EaseMySearch](https://raazankeet.github.io/EaseMySearch)
 
 ## Usage
 
