@@ -1,0 +1,2 @@
+# EaseMySearch
+Searches made easy!
