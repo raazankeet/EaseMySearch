@@ -78,6 +78,11 @@
       margin-right: 8px;
     }
     
+	/* All buttons rounded */
+	.rounded-corner {
+      border-radius: 25px;
+    }
+	
     /* Decrease the width of the search box */
     .search-input input {
       width: 250px;
