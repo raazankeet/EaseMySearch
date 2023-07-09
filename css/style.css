@@ -1,215 +1,202 @@
-/* Styling for the toggle button */
 .toggle-button {
-  position: relative;
+    
+	position: relative;
   right: -3rem;
-  width: 40px;
-  height: 24px;
-}
 
-.toggle-button input {
-  display: none;
-}
+    
+    width: 40px; /* Adjust the width as desired */
+    height: 24px; /* Adjust the height as desired */
+    
+  }
 
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: .4s;
-  border-radius: 24px;
-}
+  .toggle-button input {
+    display: none;
+  }
 
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 16px;
-  width: 16px;
-  left: 4px;
-  bottom: 4px;
-  background-color: green;
-  transition: .4s;
-  border-radius: 50%;
-}
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 24px; /* Adjust the border-radius to match the height */
+  }
 
-input:checked + .slider {
-  background-color: #black;
-}
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px; /* Adjust the height as desired */
+    width: 16px; /* Adjust the width as desired */
+    left: 4px;
+    bottom: 4px;
+    background-color: green;
+    transition: .4s;
+    border-radius: 50%;
+  }
 
-input:focus + .slider {
-  box-shadow: 0 0 1px #black;
-}
+   input:checked + .slider {
+    background-color: #black;
+  }
 
-input:checked + .slider:before {
-  transform: translateX(16px);
-}
+  input:focus + .slider {
+    box-shadow: 0 0 1px #black;
+  }
 
-/* Styling for the dark mode */
-.dark-mode {
-  background-color: #333;
-  color: #fff;
-}
+  input:checked + .slider:before {
+    transform: translateX(16px); /* Adjust the translation distance to match the width */
+  }
 
-/* Styling for the main container */
-.container {
-  margin-top: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  max-width: 1300px;
-}
+  /* Add this style to change the background color of the webpage */
+  .dark-mode {
+    background-color: #333;
+    color: #fff;
+  }
+  
 
-/* Styling for the file input */
-.file-input {
-  margin-bottom: 20px;
-}
-
-/* Styling for the search input */
-.search-input {
-  margin-bottom: 10px;
-}
-
-.separator-label {
-  margin-left: 8px;
-  margin-right: 8px;
-}
-
-.search-input input {
-  width: 250px;
-}
-
-/* Styling for the table container */
-.table-container {
-  margin-bottom: 10px;
-}
-
-/* Styling for the pagination container */
-.pagination-container {
-  margin-top: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.pagination-container .pagination {
-  margin-bottom: 0;
-  display: flex;
-  gap: 5px;
-}
-
-.pagination-container .pagination .page-link {
-  padding: 5px 10px;
-}
-
-.pagination-container .pagination .page-item:first-child .page-link,
-.pagination-container .pagination .page-item:last-child .page-link {
-  border-radius: 20px;
-}
-
-/* Styling for striped table rows */
-.table-striped tbody tr:nth-of-type(odd) {
-  background-color: #f7f7f7;
-}
-
-.table-striped tbody tr:nth-of-type(even) {
-  background-color: #fff;
-}
-
-/* Styling for table header cells */
-.table th {
-  text-align: center;
-  padding: 5px 2px;
-  width: 120px;
-  min-width: 12px;
-}
-
-/* Styling for table data cells */
-.table td {
-  padding: 2px;
-  font-size: 20px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-
-/* Aligning content to the right */
-.align-right {
-  display: flex;
-  justify-content: flex-end;
-}
-
-/* Adjusting table width */
-table.table-fit {
-  width: auto;
-}
-
-table.table-fit thead th,
-table.table-fit tfoot th {
-  width: auto;
-}
-
-table.table-fit tbody td,
-table.table-fit tfoot td {
-  width: auto !important;
-}
-
-/* Styling for toast notifications */
+    
+    .container {
+      margin-top: 30px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      max-width: 1300px;
+    }
+    
+    .file-input {
+      margin-bottom: 20px;
+    }
+    
+    .search-input {
+      margin-bottom: 10px;
+    }
+    
+    .separator-label {
+      margin-left: 8px;
+      margin-right: 8px;
+    }
+    
+    /* Decrease the width of the search box */
+    .search-input input {
+      width: 250px;
+    }
+    
+    .table-container {
+      margin-bottom: 10px;
+    }
+    
+    .pagination-container {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .pagination-container .pagination {
+      margin-bottom: 0;
+      display: flex;
+      gap: 5px;
+    }
+    
+    .pagination-container .pagination .page-link {
+      padding: 5px 10px;
+    }
+    
+    .pagination-container .pagination .page-item:first-child .page-link,
+    .pagination-container .pagination .page-item:last-child .page-link {
+      border-radius: 20px;
+    }
+    
+    .table-striped tbody tr:nth-of-type(odd) {
+      background-color: #f7f7f7;
+    }
+    
+    .table-striped tbody tr:nth-of-type(even) {
+      background-color: #fff;
+    }
+    
+    /* Center align the table header */
+    .table th {
+      text-align: center;
+      padding: 5px 2px;
+      width: 120px; /* Set the desired width for the table header */
+      min-width: 12px; /* Set the minimum width to prevent narrowing */
+    }
+    
+    .table td {
+      padding: 2px;
+      font-size: 20px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    
+    .align-right {
+      display: flex;
+      justify-content: flex-end;
+    }
+    
+    table.table-fit {
+      width: auto;
+    }
+    
+    table.table-fit thead th,
+    table.table-fit tfoot th {
+      width: auto;
+    }
+    
+    table.table-fit tbody td,
+    table.table-fit tfoot td {
+      width: auto !important;
+    }
+    
 .toast-container {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  padding: 10px;
-  z-index: 1000;
-}
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      padding: 10px;
+      z-index: 1000;
+	  
+    }
+    
+    .toast-success {
+      background-color: #c3e6cb;
+      color: #155724;
+    }
+    
+    .toast-body {
+      
+	  height: 20px;
+    }
+	
+.download-button {
 
-.toast-success {
-  background-color: #c3e6cb;
-  color: #155724;
-}
-
-.toast-body {
-  height: 20px;
-}
-
-/* Styling for download button */
-.download-button {}
-
-.download-button .btn {
-  margin-left: 10px;
-}
-
-.icon-download {
+    }
+    
+    .download-button .btn {
+      margin-left: 10px;
+    }
+	
+	.icon-download {
   vertical-align: middle;
   margin-right: 1px;
 }
 
-/* Styling for Material Icons */
-.material-icons.md-18 {
-  font-size: 18px;
-}
+	
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
 
-.material-icons.md-24 {
-  font-size: 24px;
-}
-
-.material-icons.md-36 {
-  font-size: 36px;
-}
-
-.material-icons.md-48 {
-  font-size: 48px;
-}
-
-/* Styling for the toggle button */
 .toggle-btn {
   position: relative;
   width: 50px;
   height: 25px;
   margin: 0 auto;
   border-radius: 40px;
-  right: -4.5rem;
+  right:-4.5rem
 }
 
 input[type="checkbox"] {
@@ -248,6 +235,7 @@ input[type="checkbox"] {
   width: 16px;
   height: 18px;
   border-radius: 50%;
+ 
   transition: 0.5s ease transform, 0.2s ease background-color;
 }
 
@@ -280,3 +268,5 @@ input[type="checkbox"] {
   background-color: #fff;
   transform: translate(32px, 0px);
 }
+
+/* First toggle btn completed */
